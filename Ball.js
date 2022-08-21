@@ -1,5 +1,6 @@
 const INITIAL_VELOCITY = 0.025;
 const VELOCITY_INCREASE = 0.00001;
+const rootElem = document.querySelector(':root');
 
 export default class Ball {
     constructor(ballElem) {
@@ -50,6 +51,7 @@ export default class Ball {
         }
 
         if(paddleRects.some(r => isCollision(r, rect))) {
+            rootElem.style.setProperty('--hue', randomNumberBetween(0, 360));
             this.direction.x *= -1;
         }
     }

@@ -39,6 +39,7 @@ function handleLose() {
 }
 
 document.addEventListener("mousemove", e => {
+    console.log(e.y)
     playerPaddle.position = (e.y / window.innerHeight) * 100;
 });
 
